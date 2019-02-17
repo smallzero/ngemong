@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="full" lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Streaming Cara Mendidik Anak">
+    <meta name="author" content="mamatzone">
+    <title>Parenting | Streaming Sound Cara Mendidik Anak</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/the-big-picture.css" rel="stylesheet">
+    <!--<link href="css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" href="/circle-jplayer/skin/circle.player.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" onclick="btnPlaylist()">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Parenting Soundcast</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" onclick="btnPlaylist()">Playlist</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="row" id="playlist">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="list-group overflow-y-scroll pull-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-lg-2 col-sm-2" align="center">
+                <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
+                <div id="jquery_jplayer_1" class="cp-jplayer"></div>
+                <!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+                <div id="cp_container_1" class="cp-container">
+                    <div class="cp-buffer-holder">
+                        <!-- .cp-gt50 only needed when buffer is > than 50% -->
+                        <div class="cp-buffer-1"></div>
+                        <div class="cp-buffer-2"></div>
+                    </div>
+                    <div class="cp-progress-holder">
+                        <!-- .cp-gt50 only needed when progress is > than 50% -->
+                        <div class="cp-progress-1"></div>
+                        <div class="cp-progress-2"></div>
+                    </div>
+                    <div class="cp-circle-control"></div>
+                    <ul class="cp-controls">
+                        <li><a class="cp-play" tabindex="1">play</a></li>
+                        <li><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li>
+                        <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-10 textshadow">
+                <h1 id="title">Mendidik Anak dengan Lembut</h1>
+                <p id="describe">"Maka kerana rahmat Allah lah engkau bersikap lemah lembut terhadap mereka. Seandainya engkau bersikap kaku dan keras hati, tentulah mereka akan menjauhkan diri darimu.", <strong style="font-size:16px">Al Quran, Surah Ali Imraan ayat 159.</strong>
+                </p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="/circle-jplayer/js/jquery.transform2d.js"></script>
+    <script type="text/javascript" src="/circle-jplayer/js/jquery.grab.js"></script>
+    <script type="text/javascript" src="/circle-jplayer/js/mod.csstransforms.min.js"></script>
+    <script type="text/javascript" src="/circle-jplayer/js/circle.player.js"></script>
+
+    <script>
+        var listAudio = [];
+        $(function () {
+            listAudio = [
+                {
+                    title: 'Anak Yang Tidak Bisa Dididik atau Orang Tua Yang Tidak Bisa Mendidik',
+                    describe: 'Anak bagaikan lembaran kertas putih, tergantung orang tua bagaimana menorehkan tinta-tinta kebaikan bagi anak. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
+                    path: 'http://112.78.142.74:81/parenting/anak-yang-tidak-bisa-didik-atau-orangtua-yang-tidak-bisa-mendidik.mp3'
+                },
+                {
+                    title: 'Arti Jenius',
+                    describe: 'Arti Jenius pada anak yang kita pahami dari masyarakat umum saat ini sepertinya perlu kita perbaiki, simak bagaimana Arti Jenius menurut Ayah Edy sangat menarik dan membuka wawasan baru. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
+                    path: 'http://112.78.142.74:81/parenting/arti-jenius.mp3'
+                },
+                {
+                    title: 'Asal Usul Perilaku Anak - 01',
+                    describe: 'Asal Usul Prilaku Anak dari mana pengaruh terbesarnya, dan bagaimana kita membangun prilaku anak, simak lebih lanjut penjelasan Ayah Edi berikut ini. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
+                    path: 'http://112.78.142.74:81/parenting/asal-usul-prilaku-anak-01.mp3'
+                },
+                {
+                    title: 'Asal Usul Perilaku Anak - 02',
+                    describe: 'Asal Usul Prilaku Anak dari mana pengaruh terbesarnya, dan bagaimana kita membangun prilaku anak, simak lebih lanjut penjelasan Ayah Edi berikut ini. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
+                    path: 'http://112.78.142.74:81/parenting/asal-usul-prilaku-anak-02.mp3'
+                },
+            ];
+            for (var i = 0; i < listAudio.length; i++) {
+                $('.list-group').append('<a href="#" onclick="btnPlay(' + i + ')" class="list-group-item">' + listAudio[i].title + '</a>');
+            }
+
+            $('#title').text(listAudio[0].title);
+            $('#describe').html(listAudio[0].describe);
+            //console.log(listAudio[0].path);
+            var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", {
+                mp3: listAudio[0].path
+            }, {
+                cssSelectorAncestor: "#cp_container_1",
+                swfPath: "jplayer",
+                wmode: "window",
+                keyEnabled: true,
+                supplied: "mp3",
+                preload: "none",
+            });
+
+            $('#playlist').hide();
+        });
+        var statusPlaylist = false;
+
+        function btnPlaylist() {
+            $(function () {
+                if (statusPlaylist) {
+                    $('#playlist').hide();
+                    statusPlaylist = false;
+                } else {
+                    $('#playlist').show();
+                    statusPlaylist = true;
+                }
+            });
+        }
+
+        function btnPlay(i) {
+            $(function () {
+                $('#title').text(listAudio[i].title);
+                $('#describe').html(listAudio[i].describe);
+                //console.log('path : ' + listAudio[i].path);
+                var $player = $("#jquery_jplayer_1");
+                if ($player.data().jPlayer && $player.data().jPlayer.internal.ready === true) {
+                    $player.jPlayer("setMedia", {
+                        mp3: listAudio[i].path
+                    }, {
+                        cssSelectorAncestor: "#cp_container_1",
+                        swfPath: "jplayer",
+                        wmode: "window",
+                        keyEnabled: true,
+                        supplied: "mp3",
+                        preload: "none",
+                    }).jPlayer("play");
+                } else {
+                    $player.jPlayer({
+                        ready: function () {
+                            $(this).jPlayer("setMedia", {
+                                mp3: listAudio[i].path
+                            }).jPlayer("play");
+                        },
+                        cssSelectorAncestor: "#cp_container_1",
+                        swfPath: "jplayer",
+                        wmode: "window",
+                        keyEnabled: true,
+                        supplied: "mp3",
+                        preload: "none",
+                    });
+                }
+            });
+        }
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+</body>
+
+</html>
