@@ -20,7 +20,7 @@
     <!-- Custom CSS -->
     <link href="css/the-big-picture.css" rel="stylesheet">
     <!--<link href="css/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />-->
-    <link rel="stylesheet" href="/circle-jplayer/skin/circle.player.css">
+    <link rel="stylesheet" href="circle-jplayer/skin/circle.player.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -32,7 +32,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header" style="width:100%">
                 <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" onclick="btnPlaylist()">
                     <span class="sr-only">Toggle navigation</span>
@@ -45,6 +45,8 @@
             <!-- /.navbar-collapse -->
             <div class="row" id="playlist">
                 <div class="col-sm-12 col-md-12 col-lg-12">
+                    <input type="text" id="search-text" class="form-control" placeholder="Pencarian"
+                        onkeyup="searchList(this.value)" />
                     <div class="list-group pull-center">
                     </div>
                 </div>
@@ -97,96 +99,11 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" src="/circle-jplayer/js/jquery.transform2d.js"></script>
-    <script type="text/javascript" src="/circle-jplayer/js/jquery.grab.js"></script>
-    <script type="text/javascript" src="/circle-jplayer/js/mod.csstransforms.min.js"></script>
-    <script type="text/javascript" src="/circle-jplayer/js/circle.player.js"></script>
-
-    <script>
-        var listAudio = [];
-
-        $(function () {
-            $.getJSON("./api/playlist.json", function (data) {
-                listAudio = data;
-                for (var i = 0; i < listAudio.length; i++) {
-                    $('.list-group').append('<a href="#" id="item-' + i + '" onclick="btnPlay(' + i + ')" class="list-group-item">' + listAudio[i].title + '</a>');
-                }
-
-                $('.list-group').css({ "height": "200px", "overflow-y": "auto" });
-
-                $('#title').text(listAudio[0].title);
-                $('#describe').html(listAudio[0].describe);
-                //console.log(listAudio[0].path);
-                var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", {
-                    mp3: listAudio[0].path
-                }, {
-                        cssSelectorAncestor: "#cp_container_1",
-                        swfPath: "jplayer",
-                        wmode: "window",
-                        keyEnabled: true,
-                        supplied: "mp3",
-                        preload: "none",
-                    });
-
-                $('#playlist').hide();
-            });
-
-
-        });
-        var statusPlaylist = false;
-
-        function btnPlaylist() {
-            $(function () {
-                if (statusPlaylist) {
-                    $('#playlist').hide();
-                    statusPlaylist = false;
-                } else {
-                    $('#playlist').show();
-                    statusPlaylist = true;
-                }
-            });
-        }
-
-        var itemSelectedTmp = 0;
-        function btnPlay(i) {
-            $(function () {
-                $('#title').text(listAudio[i].title);
-                $('#describe').html(listAudio[i].describe);
-                if (itemSelectedTmp != i) {
-                    $('#item-' + i).css({ "background-color": "#ddd" });
-                    $('#item-' + itemSelectedTmp).css({ "background-color": "#fff" });
-                    itemSelectedTmp = i;
-                }
-                var $player = $("#jquery_jplayer_1");
-                if ($player.data().jPlayer && $player.data().jPlayer.internal.ready === true) {
-                    $player.jPlayer("setMedia", {
-                        mp3: listAudio[i].path
-                    }, {
-                            cssSelectorAncestor: "#cp_container_1",
-                            swfPath: "jplayer",
-                            wmode: "window",
-                            keyEnabled: true,
-                            supplied: "mp3",
-                            preload: "none",
-                        }).jPlayer("play");
-                } else {
-                    $player.jPlayer({
-                        ready: function () {
-                            $(this).jPlayer("setMedia", {
-                                mp3: listAudio[i].path
-                            }).jPlayer("play");
-                        },
-                        cssSelectorAncestor: "#cp_container_1",
-                        swfPath: "jplayer",
-                        wmode: "window",
-                        keyEnabled: true,
-                        supplied: "mp3",
-                        preload: "none",
-                    });
-                }
-            });
-        }
-    </script>
+    <script type="text/javascript" src="circle-jplayer/js/jquery.transform2d.js"></script>
+    <script type="text/javascript" src="circle-jplayer/js/jquery.grab.js"></script>
+    <script type="text/javascript" src="circle-jplayer/js/mod.csstransforms.min.js"></script>
+    <script type="text/javascript" src="circle-jplayer/js/circle.player.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
