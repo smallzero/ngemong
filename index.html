@@ -9,9 +9,11 @@
     <meta name="author" content="mamatzone">
     <title>Ngemong | Soundcast Cara Mendidik Anak</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -31,7 +33,8 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" onclick="btnPlaylist()">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" onclick="btnPlaylist()">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -55,12 +58,14 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 textshadow" align="center">
                 <h1 id="title">Mendidik Anak dengan Lembut</h1>
-                <p id="describe">"Maka kerana rahmat Allah lah engkau bersikap lemah lembut terhadap mereka. Seandainya engkau bersikap kaku dan keras hati, tentulah mereka akan menjauhkan diri darimu.", <strong style="font-size:16px">Al Quran, Surah Ali Imraan ayat 159.</strong>
+                <p id="describe">"Maka kerana rahmat Allah lah engkau bersikap lemah lembut terhadap mereka. Seandainya
+                    engkau bersikap kaku dan keras hati, tentulah mereka akan menjauhkan diri darimu.", <strong
+                        style="font-size:16px">Al Quran, Surah Ali Imraan ayat 159.</strong>
                 </p>
             </div>
         </div>
-        
-        <div class="row">            
+
+        <div class="row">
             <div class="col-lg-12 col-lg-12 col-sm-12" align="center">
                 <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
                 <div id="jquery_jplayer_1" class="cp-jplayer"></div>
@@ -89,7 +94,8 @@
     </div>
     <!-- /.container -->
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="/circle-jplayer/js/jquery.transform2d.js"></script>
     <script type="text/javascript" src="/circle-jplayer/js/jquery.grab.js"></script>
@@ -98,100 +104,34 @@
 
     <script>
         var listAudio = [];
-        $(function () {
-            listAudio = [
- 		{
-                    title: 'Tips Mendidik Anak Menurut Cak Nun',
-                    describe: 'Menurut Cak Nun mendidik anak itu tidak bisa, yang namanya mendidik anak adalah kita mempelajari Tuhan maunya apa terhadap anak, dia itu siapa itu kita ikuti terus. Ajarilah anak berfikir jernih, punya analisis, jangan punya rasa gede rasa/sombong dan jangan minder.',
-                    path: 'http://www.ngemong.id/data/tips-mendidik-anak-menurut-cak-nun.mp3'
-                },
-                {
-                    title: 'Anak Yang Tidak Bisa Dididik atau Orang Tua Yang Tidak Bisa Mendidik',
-                    describe: 'Anak bagaikan lembaran kertas putih, tergantung orang tua bagaimana menorehkan tinta-tinta kebaikan bagi anak. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
-                    path: 'http://www.ngemong.id/data/anak-yang-tidak-bisa-didik-atau-orangtua-yang-tidak-bisa-mendidik.mp3'
-                },
-		{
-                    title: 'Cara Mendidik Anak Sholeh - KH. Zainuddin MZ',
-                    describe: 'Kalau setiap Muslim ditanya, pasti ingin punya anak Sholeh. Mari kita simak bagaimana tips mendidik anak menurut KH. Zainuddin MZ.',
-                    path: 'http://www.ngemong.id/data/cara-mendidik-anak-sholeh-kh-zainuddin-mz.mp3'
-                },
 
-                {
-                    title: 'Arti Jenius',
-                    describe: 'Arti Jenius pada anak yang kita pahami dari masyarakat umum saat ini sepertinya perlu kita perbaiki, simak bagaimana Arti Jenius menurut Ayah Edy sangat menarik dan membuka wawasan baru. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
-                    path: 'http://www.ngemong.id/data/arti-jenius.mp3'
-                },
-                {
-                    title: 'Asal Usul Perilaku Anak - 01',
-                    describe: 'Asal Usul Prilaku Anak dari mana pengaruh terbesarnya, dan bagaimana kita membangun prilaku anak, simak lebih lanjut penjelasan Ayah Edi berikut ini. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
-                    path: 'http://www.ngemong.id/data/asal-usul-prilaku-anak-01.mp3'
-                },
-                {
-                    title: 'Asal Usul Perilaku Anak - 02',
-                    describe: 'Asal Usul Prilaku Anak dari mana pengaruh terbesarnya, dan bagaimana kita membangun prilaku anak, simak lebih lanjut penjelasan Ayah Edi berikut ini. Audio ini berasal dari Program Indonesia Strong from Home oleh Ayah Edi.',
-                    path: 'http://www.ngemong.id/data/asal-usul-prilaku-anak-02.mp3'
-                },
-                {
-                    title: 'Anakku Masih Suka Melawan dan Sulit Diatur - 01',
-                    describe: 'Kenapa anak kita masih suka melawan dan sulit diatur? Mari kita dengarkan bagaimana Ayah Edi menjelaskan alasannya dan solusi bagaimana menghadapi Anak yang suka melawan dan sulit diatur.',
-                    path: 'http://www.ngemong.id/data/anakku-masih-suka-melawan-dan-sulit-diatur-01.mp3'
-                },
-                {
-                    title: 'Anakku Masih Suka Melawan dan Sulit Diatur - 02',
-                    describe: 'Kenapa anak kita masih suka melawan dan sulit diatur? Mari kita dengarkan bagaimana Ayah Edi menjelaskan alasannya dan solusi bagaimana menghadapi Anak yang suka melawan dan sulit diatur.',
-                    path: 'http://www.ngemong.id/data/anakku-masih-suka-melawan-dan-sulit-diatur-02.mp3'
-                },
-                {
-                    title: 'Beda Anak Autis dan Anak Otak Kanan - 01',
-                    describe: 'Mari kita simak Ayah Edi, mengenai beda anak Autis dan Anak Otak Kanan',
-                    path: 'http://www.ngemong.id/data/beda-anak-autis-dan-otak-kanan-01.mp3'
-                },
-                {
-                    title: 'Beda Anak Autis dan Anak Otak Kanan - 02',
-                    describe: 'Mari kita simak Ayah Edi, mengenai beda anak Autis dan Anak Otak Kanan',
-                    path: 'http://www.ngemong.id/data/beda-anak-autis-dan-otak-kanan-02.mp3'
-                },
-                {
-                    title: 'Aturan Main Di Rumah - 01',
-                    describe: 'Mari kita simak Ayah Edi, bagaimana membuat Aturan Main Di Rumah yang menyenangkan.',
-                    path: 'http://www.ngemong.id/data/aturan-main-dirumah-01.mp3'
-                },
-                {
-                    title: 'Aturan Main Di Rumah - 02',
-                    describe: 'Mari kita simak Ayah Edi, bagaimana membuat Aturan Main Di Rumah yang menyenangkan.',
-                    path: 'http://www.ngemong.id/data/aturan-main-dirumah-02.mp3'
-                },
-                {
-                    title: 'Bullying - 01',
-                    describe: 'Bagimana menghadapi Bullying pada anak? Mari kita simak penjelasan dari Ayah Edi.',
-                    path: 'http://www.ngemong.id/data/bullying-01.mp3'
-                },
-                {
-                    title: 'Bullying - 02',
-                    describe: 'Bagimana menghadapi Bullying pada anak? Mari kita simak penjelasan dari Ayah Edi.',
-                    path: 'http://www.ngemong.id/data/bullying-02.mp3'
+        $(function () {
+            $.getJSON("./api/playlist.json", function (data) {
+                listAudio = data;
+                for (var i = 0; i < listAudio.length; i++) {
+                    $('.list-group').append('<a href="#" id="item-' + i + '" onclick="btnPlay(' + i + ')" class="list-group-item">' + listAudio[i].title + '</a>');
                 }
-            ];
-            for (var i = 0; i < listAudio.length; i++) {
-                $('.list-group').append('<a href="#" id="item-'+i+'" onclick="btnPlay(' + i + ')" class="list-group-item">' + listAudio[i].title + '</a>');
-            }
-	    $('.list-group').css({"height":"200px", "overflow-y":"auto"});
-		
-            $('#title').text(listAudio[0].title);
-            $('#describe').html(listAudio[0].describe);
-            //console.log(listAudio[0].path);
-            var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", {
-                mp3: listAudio[0].path
-            }, {
-                cssSelectorAncestor: "#cp_container_1",
-                swfPath: "jplayer",
-                wmode: "window",
-                keyEnabled: true,
-                supplied: "mp3",
-                preload: "none",
+
+                $('.list-group').css({ "height": "200px", "overflow-y": "auto" });
+
+                $('#title').text(listAudio[0].title);
+                $('#describe').html(listAudio[0].describe);
+                //console.log(listAudio[0].path);
+                var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", {
+                    mp3: listAudio[0].path
+                }, {
+                        cssSelectorAncestor: "#cp_container_1",
+                        swfPath: "jplayer",
+                        wmode: "window",
+                        keyEnabled: true,
+                        supplied: "mp3",
+                        preload: "none",
+                    });
+
+                $('#playlist').hide();
             });
 
-            $('#playlist').hide();
+
         });
         var statusPlaylist = false;
 
@@ -206,31 +146,29 @@
                 }
             });
         }
-	
-	var itemSelectedTmp=0;
+
+        var itemSelectedTmp = 0;
         function btnPlay(i) {
             $(function () {
                 $('#title').text(listAudio[i].title);
                 $('#describe').html(listAudio[i].describe);
-		if(itemSelectedTmp!=i){
-			$('#item-'+i).css({"background-color":"#ddd"});
-			$('#item-'+itemSelectedTmp).css({"background-color":"#fff"});
-			itemSelectedTmp=i;
-		}
-		//$('#item-'+i).css({"background-color":"#ddd"});
-                //console.log('path : ' + listAudio[i].path);
+                if (itemSelectedTmp != i) {
+                    $('#item-' + i).css({ "background-color": "#ddd" });
+                    $('#item-' + itemSelectedTmp).css({ "background-color": "#fff" });
+                    itemSelectedTmp = i;
+                }
                 var $player = $("#jquery_jplayer_1");
                 if ($player.data().jPlayer && $player.data().jPlayer.internal.ready === true) {
                     $player.jPlayer("setMedia", {
                         mp3: listAudio[i].path
                     }, {
-                        cssSelectorAncestor: "#cp_container_1",
-                        swfPath: "jplayer",
-                        wmode: "window",
-                        keyEnabled: true,
-                        supplied: "mp3",
-                        preload: "none",
-                    }).jPlayer("play");
+                            cssSelectorAncestor: "#cp_container_1",
+                            swfPath: "jplayer",
+                            wmode: "window",
+                            keyEnabled: true,
+                            supplied: "mp3",
+                            preload: "none",
+                        }).jPlayer("play");
                 } else {
                     $player.jPlayer({
                         ready: function () {
@@ -250,7 +188,9 @@
         }
     </script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
